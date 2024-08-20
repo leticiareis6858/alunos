@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -136,6 +137,29 @@ namespace Alunos
                     cmd.Parameters.AddWithValue("@email", email);
 
                     int resultado = cmd.ExecuteNonQuery();
+
+                    return resultado > 0;
+                }
+            }
+        }
+
+        public bool CadastrarUsuario(String nome, String email, String senha)
+        {
+            using(MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+
+                string query="INSERT INTO tb_usuario(nome_usuario, email_usuario, senha_usuario) VALUES(@nome, @email, @senha)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    conn.Close();
 
                     return resultado > 0;
                 }
