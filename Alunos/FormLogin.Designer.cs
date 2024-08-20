@@ -131,7 +131,7 @@
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.txt_email);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
