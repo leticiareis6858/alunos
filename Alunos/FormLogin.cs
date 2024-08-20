@@ -53,6 +53,7 @@ namespace Alunos
         private void link_mudar_senha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormRecuperarSenha recuperarSenha = new FormRecuperarSenha();
+            recuperarSenha.txt_email.Text=txt_email.Text;
             this.Hide();
             recuperarSenha.ShowDialog();
             this.Close();
