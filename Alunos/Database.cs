@@ -165,5 +165,26 @@ namespace Alunos
                 }
             }
         }
+
+        public void cadastrarAluno(String nome, String email, String senha, String telefone, String data_nasc, String cidade, String endereco)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+
+                String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@data_nascimento", data_nasc);
+                cmd.Parameters.AddWithValue("@cidade", cidade);
+                cmd.Parameters.AddWithValue("@endereco", endereco);
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
     }
 }
