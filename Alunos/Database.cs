@@ -138,6 +138,8 @@ namespace Alunos
 
                     int resultado = cmd.ExecuteNonQuery();
 
+                    conn.Close();
+
                     return resultado > 0;
                 }
             }
@@ -198,6 +200,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -212,6 +216,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -226,6 +232,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -240,6 +248,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -254,6 +264,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -268,6 +280,8 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
             }
         }
 
@@ -287,6 +301,26 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@nome", nome);
 
                 cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
+        public DataTable BuscarAlunos()
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM tb_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
             }
         }
 
