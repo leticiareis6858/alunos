@@ -186,5 +186,109 @@ namespace Alunos
                 conn.Close();
             }
         }
+
+        public void AtualizarEmailAluno(String nome, String email)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET email_aluno = @email WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarSenhaAluno(String nome, String senha)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET senha_aluno = @senha WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarTelefoneAluno(String nome, String telefone)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET telefone_aluno = @telefone WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarCidadeAluno(String nome, String cidade)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET cidade_aluno = @cidade WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@cidade", cidade);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarEnderecoAluno(String nome, String endereco)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET endereco_aluno = @endereco WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@endereco", endereco);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarDataNascAluno(String nome, String dataNasc)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET data_nasc_aluno = @data_nasc WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void AtualizarAluno(String nome, String email, String senha, String telefone, String cidade, String endereco, String dataNasc)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET email_aluno = @email, senha_aluno = @senha, telefone_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE nome_aluno = @nome";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@cidade", cidade);
+                cmd.Parameters.AddWithValue("@endereco", endereco);
+                cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
+                cmd.Parameters.AddWithValue("@nome", nome);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }
