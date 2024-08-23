@@ -189,15 +189,31 @@ namespace Alunos
             }
         }
 
-        public void AtualizarEmailAluno(String nome, String email)
+        public void AtualizarNomeAluno(String nome, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET email_aluno = @email WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET nome_aluno = @nome WHERE matricula_aluno = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id",id);
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
+        public void AtualizarEmailAluno(String email, String id)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET email_aluno = @email WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -205,15 +221,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarSenhaAluno(String nome, String senha)
+        public void AtualizarSenhaAluno(String senha, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET senha_aluno = @senha WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET senha_aluno = @senha WHERE matricula_aluno = @id ";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@senha", senha);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -221,15 +237,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarTelefoneAluno(String nome, String telefone)
+        public void AtualizarTelefoneAluno(String telefone, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET telefone_aluno = @telefone WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET telefone_aluno = @telefone WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -237,15 +253,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarCidadeAluno(String nome, String cidade)
+        public void AtualizarCidadeAluno(String cidade, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET cidade_aluno = @cidade WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET cidade_aluno = @cidade WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -253,15 +269,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarEnderecoAluno(String nome, String endereco)
+        public void AtualizarEnderecoAluno(String endereco, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET endereco_aluno = @endereco WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET endereco_aluno = @endereco WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@endereco", endereco);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -269,15 +285,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarDataNascAluno(String nome, String dataNasc)
+        public void AtualizarDataNascAluno(String dataNasc, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET data_nasc_aluno = @data_nasc WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -285,20 +301,21 @@ namespace Alunos
             }
         }
 
-        public void AtualizarAluno(String nome, String email, String senha, String telefone, String cidade, String endereco, String dataNasc)
+        public void AtualizarAluno(String nome, String email, String senha, String telefone, String cidade, String endereco, String dataNasc, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET email_aluno = @email, senha_aluno = @senha, telefone_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE nome_aluno = @nome";
+                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, senha_aluno = @senha, telefone_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@senha", senha);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
                 cmd.Parameters.AddWithValue("@endereco", endereco);
                 cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
-                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -321,6 +338,24 @@ namespace Alunos
                 conn.Close();
 
                 return dt;
+            }
+        }
+
+        public bool ExcluirAluno(String id)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+
+                string query = "DELETE FROM tb_aluno WHERE matricula_aluno = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                int resultado = cmd.ExecuteNonQuery();
+
+                conn.Close();
+
+                return resultado > 0;
             }
         }
 
