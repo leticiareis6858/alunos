@@ -60,12 +60,25 @@ namespace Alunos
             this.Close();
         }
 
-        private void btn_sair_Click(object sender, EventArgs e)
+        private void btn_buscar_Click(object sender, EventArgs e)
         {
-            FormLogin telaLogin = new FormLogin();
-            this.Hide();
-            telaLogin.ShowDialog();
-            this.Close();
+            String id = txt_id.Text;
+            if (id != null)
+            {
+                DataTable aluno = db.BuscarAluno(id);
+                dataGridView_alunos.DataSource = aluno;
+            }
+            else if(txt_nome_aluno.Text!=null)
+            {
+               id = txt_nome_aluno.Text;
+               DataTable aluno = db.BuscarAluno(id);
+               dataGridView_alunos.DataSource = aluno;
+
+            }
+            else
+            {
+                MessageBox.Show("Informe o ID do aluno a ser buscado");
+            }
         }
     }
 }

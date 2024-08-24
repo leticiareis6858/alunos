@@ -34,51 +34,56 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.btn_limpar = new System.Windows.Forms.Button();
-            this.btn_sair = new System.Windows.Forms.Button();
             this.txt_nome = new System.Windows.Forms.Label();
+            this.btn_buscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_nome_aluno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_alunos)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_alunos
             // 
             this.dataGridView_alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_alunos.Location = new System.Drawing.Point(55, 156);
+            this.dataGridView_alunos.Location = new System.Drawing.Point(39, 169);
             this.dataGridView_alunos.Name = "dataGridView_alunos";
-            this.dataGridView_alunos.Size = new System.Drawing.Size(682, 250);
+            this.dataGridView_alunos.Size = new System.Drawing.Size(412, 250);
             this.dataGridView_alunos.TabIndex = 0;
             // 
             // txt_id
             // 
-            this.txt_id.Location = new System.Drawing.Point(63, 25);
+            this.txt_id.Location = new System.Drawing.Point(39, 55);
             this.txt_id.Multiline = true;
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(100, 100);
+            this.txt_id.Size = new System.Drawing.Size(111, 27);
             this.txt_id.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(97, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "ID do Aluno:";
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Location = new System.Drawing.Point(169, 103);
+            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Location = new System.Drawing.Point(246, 52);
             this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(181, 34);
+            this.btn_excluir.Size = new System.Drawing.Size(88, 44);
             this.btn_excluir.TabIndex = 3;
-            this.btn_excluir.Text = "Gravar";
+            this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(646, 19);
+            this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_voltar.Location = new System.Drawing.Point(378, 24);
             this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(81, 30);
+            this.btn_voltar.Size = new System.Drawing.Size(73, 37);
             this.btn_voltar.TabIndex = 5;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
@@ -86,41 +91,63 @@
             // 
             // btn_limpar
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(375, 105);
+            this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpar.Location = new System.Drawing.Point(378, 70);
             this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(95, 30);
+            this.btn_limpar.Size = new System.Drawing.Size(73, 37);
             this.btn_limpar.TabIndex = 6;
             this.btn_limpar.Text = "Limpar";
             this.btn_limpar.UseVisualStyleBackColor = true;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
-            // btn_sair
-            // 
-            this.btn_sair.Location = new System.Drawing.Point(646, 59);
-            this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 23);
-            this.btn_sair.TabIndex = 7;
-            this.btn_sair.Text = "Sair";
-            this.btn_sair.UseVisualStyleBackColor = true;
-            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
-            // 
             // txt_nome
             // 
             this.txt_nome.AutoSize = true;
-            this.txt_nome.Location = new System.Drawing.Point(38, 419);
+            this.txt_nome.Location = new System.Drawing.Point(36, 434);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(43, 13);
             this.txt_nome.TabIndex = 8;
             this.txt_nome.Text = "Usuário";
             this.txt_nome.Visible = false;
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_buscar.Location = new System.Drawing.Point(246, 102);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(88, 44);
+            this.btn_buscar.TabIndex = 9;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nome do Aluno:";
+            // 
+            // txt_nome_aluno
+            // 
+            this.txt_nome_aluno.Location = new System.Drawing.Point(39, 119);
+            this.txt_nome_aluno.Multiline = true;
+            this.txt_nome_aluno.Name = "txt_nome_aluno";
+            this.txt_nome_aluno.Size = new System.Drawing.Size(162, 27);
+            this.txt_nome_aluno.TabIndex = 11;
+            // 
             // FormExcluirAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(484, 464);
+            this.Controls.Add(this.txt_nome_aluno);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.btn_excluir);
@@ -143,7 +170,9 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button btn_limpar;
-        private System.Windows.Forms.Button btn_sair;
         public System.Windows.Forms.Label txt_nome;
+        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_nome_aluno;
     }
 }
