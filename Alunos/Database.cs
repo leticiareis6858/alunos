@@ -88,7 +88,7 @@ namespace Alunos
 
         public bool VerificarLogin(String email, String senha)
         {
-            using(MySqlConnection conn = GetConnection())
+            using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
                 string query = "SELECT COUNT(*) FROM tb_usuario WHERE email_usuario = @email AND senha_usuario = @senha";
@@ -147,11 +147,11 @@ namespace Alunos
 
         public bool CadastrarUsuario(String nome, String email, String senha)
         {
-            using(MySqlConnection conn = GetConnection())
+            using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
 
-                string query="INSERT INTO tb_usuario(nome_usuario, email_usuario, senha_usuario) VALUES(@nome, @email, @senha)";
+                string query = "INSERT INTO tb_usuario(nome_usuario, email_usuario, senha_usuario) VALUES(@nome, @email, @senha)";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -197,7 +197,7 @@ namespace Alunos
                 string query = "UPDATE tb_aluno SET nome_aluno = @nome WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@id",id);
+                cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
 
@@ -356,6 +356,276 @@ namespace Alunos
                 conn.Close();
 
                 return resultado > 0;
+            }
+        }
+
+        public string BuscarMatriculaAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT matricula_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarNomeAluno(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT nome_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarEmailAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT email_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarSenhaAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT senha_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarWhatsappAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT whatsapp_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarCidadeAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT cidade_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarEnderecoAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT endereco_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public DateTime BuscarDataNascAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT data_nasc_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return (DateTime)result;
+            }
+        }
+
+        public string BuscarStatusMatriculaAlunoPorNome(string nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT status_matricula_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarNomeAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT nome_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarEmailAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT email_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarSenhaAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT senha_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarWhatsappAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT whatsapp_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarCidadeAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT cidade_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public string BuscarEnderecoAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT endereco_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public DateTime BuscarDataNascAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT data_nasc_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return (DateTime)result;
+            }
+        }
+
+        public string BuscarStatusMatriculaAlunoPorMatricula(string matricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT status_matricula_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
+            }
+        }
+
+        public String BuscarIdAlunoPorNome(String nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT matricula_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                object result = cmd.ExecuteScalar();
+
+                return result.ToString();
             }
         }
 
