@@ -629,5 +629,23 @@ namespace Alunos
             }
         }
 
+        public DataTable BuscarAluno(String id)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE matricula_aluno = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
     }
 }
