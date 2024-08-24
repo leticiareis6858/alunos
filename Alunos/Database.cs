@@ -59,7 +59,7 @@ namespace Alunos
                 string createTablesQuery = @"
                 CREATE TABLE IF NOT EXISTS tb_aluno (
                     matricula_aluno int NOT NULL AUTO_INCREMENT,
-                    nome_aluno varchar(100) NOT NULL,
+                    nome_aluno varchar(100) NOT NULL UNIQUE,
                     email_aluno varchar(45) NOT NULL UNIQUE,
                     whatsapp_aluno varchar(20) DEFAULT NULL UNIQUE,
                     senha_aluno varchar(50) NOT NULL,
