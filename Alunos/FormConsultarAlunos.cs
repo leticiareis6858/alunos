@@ -20,6 +20,13 @@ namespace Alunos
             DataTable alunos = db.BuscarAlunos();
 
             dataGridView_alunos.DataSource = alunos;
+
+            List<string> cidades = db.BuscarCidadesCadastradas();
+
+            foreach (string cidade in cidades)
+            {
+                cb_cidade.Items.Add(cidade);
+            }
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
@@ -36,7 +43,7 @@ namespace Alunos
             txt_nome.Text = "";
             txt_email.Text = "";
             txt_whatsapp.Text = "";
-            txt_cidade.SelectedItem = null;
+            cb_cidade.SelectedItem = null;
             txt_id.Text = "";
             txt_endereco.Text = "";
             data_nasc.Value = DateTime.Now;
@@ -50,7 +57,7 @@ namespace Alunos
             String nome = txt_nome_aluno.Text;
             String email = txt_email.Text;
             String whatsapp = txt_whatsapp.Text;
-            String cidade = txt_cidade.Text;
+            String cidade = cb_cidade.Text;
             String endereco = txt_endereco.Text;
             String dataNasc = data_nasc.Value.ToString("dd-MM-yyyy");
             String statusMatricula = status_matricula.Text;
