@@ -174,7 +174,7 @@ namespace Alunos
             {
                 conn.Open();
 
-                String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
+                String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, whatsapp_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
@@ -242,7 +242,7 @@ namespace Alunos
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET telefone_aluno = @telefone WHERE matricula_aluno = @id";
+                string query = "UPDATE tb_aluno SET whatsapp_aluno = @telefone WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@id", id);
@@ -306,7 +306,7 @@ namespace Alunos
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, senha_aluno = @senha, telefone_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
+                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, senha_aluno = @senha, whatsapp_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
