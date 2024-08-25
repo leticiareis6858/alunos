@@ -3,6 +3,7 @@ using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Alunos
 {
@@ -450,7 +451,7 @@ namespace Alunos
             }
         }
 
-        public DateTime BuscarDataNascAlunoPorNome(string nome)
+        public String BuscarDataNascAlunoPorNome(string nome)
         {
             using (MySqlConnection conn = GetConnection())
             {
@@ -461,7 +462,7 @@ namespace Alunos
 
                 object result = cmd.ExecuteScalar();
 
-                return (DateTime)result;
+                return result.ToString();
             }
         }
 
@@ -570,7 +571,7 @@ namespace Alunos
             }
         }
 
-        public DateTime BuscarDataNascAlunoPorMatricula(string matricula)
+        public String BuscarDataNascAlunoPorMatricula(string matricula)
         {
             using (MySqlConnection conn = GetConnection())
             {
@@ -581,7 +582,7 @@ namespace Alunos
 
                 object result = cmd.ExecuteScalar();
 
-                return (DateTime)result;
+                return result.ToString();
             }
         }
 
@@ -696,9 +697,9 @@ namespace Alunos
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT * FROM tb_aluno WHERE status_matricula_aluno LIKE @status_matricula_aluno";
+                string query = "SELECT * FROM tb_aluno WHERE status_matricula_aluno = @status_matricula_aluno";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@status_matricula_aluno", "%" + statusMatricula + "%");
+                cmd.Parameters.AddWithValue("@status_matricula_aluno", statusMatricula);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
