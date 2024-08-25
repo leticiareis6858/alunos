@@ -150,27 +150,27 @@ namespace Alunos
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if(txt_id.Text!=null)
-            {
-                String id = txt_id.Text;
+            string id = txt_id.Text.Trim();
+            string nome = txt_nome.Text.Trim();
 
-                txt_nome.Text=db.BuscarNomeAlunoPorMatricula(id);
+            if (!string.IsNullOrEmpty(id))
+            {
+                txt_nome.Text = db.BuscarNomeAlunoPorMatricula(id);
                 txt_email.Text = db.BuscarEmailAlunoPorMatricula(id);
-                txt_senha.Text=db.BuscarSenhaAlunoPorMatricula(id);
+                txt_senha.Text = db.BuscarSenhaAlunoPorMatricula(id);
                 txt_telefone.Text = db.BuscarWhatsappAlunoPorMatricula(id);
                 txt_endereco.Text = db.BuscarEnderecoAlunoPorMatricula(id);
-                txt_data_nasc.Value = db.BuscarDataNascAlunoPorMatricula(id);
+                txt_data_nasc.Value = DateTime.Parse(db.BuscarDataNascAlunoPorMatricula(id));
                 txt_cidade.Text = db.BuscarCidadeAlunoPorMatricula(id);
             }
-            else if(txt_nome.Text!=null)
+            else if (!string.IsNullOrEmpty(nome))
             {
-                String nome = txt_nome.Text;
-                txt_nome.Text=db.BuscarNomeAluno(nome);
+                txt_nome.Text = db.BuscarNomeAluno(nome);
                 txt_email.Text = db.BuscarEmailAlunoPorNome(nome);
-                txt_senha.Text= db.BuscarSenhaAlunoPorNome(nome);
-                txt_telefone.Text=db.BuscarWhatsappAlunoPorNome(nome);
+                txt_senha.Text = db.BuscarSenhaAlunoPorNome(nome);
+                txt_telefone.Text = db.BuscarWhatsappAlunoPorNome(nome);
                 txt_endereco.Text = db.BuscarEnderecoAlunoPorNome(nome);
-                txt_data_nasc.Value = db.BuscarDataNascAlunoPorNome(nome);
+                txt_data_nasc.Value = DateTime.Parse(db.BuscarDataNascAlunoPorNome(nome));
                 txt_cidade.Text = db.BuscarCidadeAlunoPorNome(nome);
             }
             else
