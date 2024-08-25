@@ -65,13 +65,13 @@ namespace Alunos
             String id = txt_id.Text;
             if (id != null)
             {
-                DataTable aluno = db.BuscarAluno(id);
+                DataTable aluno = db.BuscarAlunoPorId(id);
                 dataGridView_alunos.DataSource = aluno;
             }
             else if(txt_nome_aluno.Text!=null)
             {
                id = txt_nome_aluno.Text;
-               DataTable aluno = db.BuscarAluno(id);
+               DataTable aluno = db.BuscarAlunoPorId(id);
                dataGridView_alunos.DataSource = aluno;
 
             }
