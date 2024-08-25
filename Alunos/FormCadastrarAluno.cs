@@ -22,6 +22,7 @@ namespace Alunos
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormTelaInicial telaInicial=new FormTelaInicial();
+            telaInicial.txt_nome.Text = txt_nome.Text;
             this.Hide();
             telaInicial.ShowDialog();
             this.Close();
@@ -29,7 +30,7 @@ namespace Alunos
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
-            txt_nome.Clear();
+            txt_nome_aluno.Clear();
             txt_email.Clear();
             txt_telefone.Clear();
             txt_senha.Clear();
@@ -40,7 +41,7 @@ namespace Alunos
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            String nome = txt_nome.Text.Trim();
+            String nome = txt_nome_aluno.Text.Trim();
             String email = txt_email.Text.Trim();
             String senha = txt_senha.Text.Trim();
             String telefone = txt_telefone.Text.Trim();

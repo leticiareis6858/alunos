@@ -34,7 +34,7 @@
             this.txt_endereco = new System.Windows.Forms.TextBox();
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.txt_nome_aluno = new System.Windows.Forms.TextBox();
             this.data_nascimento = new System.Windows.Forms.DateTimePicker();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
@@ -47,6 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_nome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_limpar
@@ -95,12 +96,12 @@
             this.txt_email.Size = new System.Drawing.Size(227, 20);
             this.txt_email.TabIndex = 30;
             // 
-            // txt_nome
+            // txt_nome_aluno
             // 
-            this.txt_nome.Location = new System.Drawing.Point(32, 79);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(227, 20);
-            this.txt_nome.TabIndex = 29;
+            this.txt_nome_aluno.Location = new System.Drawing.Point(32, 79);
+            this.txt_nome_aluno.Name = "txt_nome_aluno";
+            this.txt_nome_aluno.Size = new System.Drawing.Size(227, 20);
+            this.txt_nome_aluno.TabIndex = 29;
             // 
             // data_nascimento
             // 
@@ -223,11 +224,21 @@
             this.comboBox1.Size = new System.Drawing.Size(228, 21);
             this.comboBox1.TabIndex = 37;
             // 
+            // txt_nome
+            // 
+            this.txt_nome.AutoSize = true;
+            this.txt_nome.Location = new System.Drawing.Point(489, 331);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(43, 13);
+            this.txt_nome.TabIndex = 38;
+            this.txt_nome.Text = "Usuário";
+            // 
             // FormCadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 376);
+            this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_limpar);
@@ -236,7 +247,7 @@
             this.Controls.Add(this.txt_endereco);
             this.Controls.Add(this.txt_telefone);
             this.Controls.Add(this.txt_email);
-            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.txt_nome_aluno);
             this.Controls.Add(this.data_nascimento);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.btn_cadastrar);
@@ -262,7 +273,7 @@
         private System.Windows.Forms.TextBox txt_endereco;
         private System.Windows.Forms.TextBox txt_telefone;
         private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.TextBox txt_nome;
+        private System.Windows.Forms.TextBox txt_nome_aluno;
         private System.Windows.Forms.DateTimePicker data_nascimento;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button btn_cadastrar;
@@ -275,5 +286,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label txt_nome;
     }
 }

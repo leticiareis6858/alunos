@@ -315,10 +315,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker data_nasc;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label txt_nome;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button btn_pesquisar_aluno;
         private System.Windows.Forms.Button btn_pesquisar_alunos;
         private System.Windows.Forms.Button btn_limpar;
+        public System.Windows.Forms.Label txt_nome;
     }
 }

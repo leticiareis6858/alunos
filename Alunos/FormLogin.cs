@@ -38,7 +38,10 @@ namespace Alunos
 
             if (usuarioValido)
             {
+                String nome = db.BuscarNomeUsuarioPorEmail(email);
+
                 FormTelaInicial telaInicial = new FormTelaInicial();
+                telaInicial.txt_nome.Text = nome;
                 this.Hide();
                 telaInicial.ShowDialog();
                 this.Close();
