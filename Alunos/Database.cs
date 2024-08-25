@@ -829,5 +829,29 @@ namespace Alunos
 
             }
         }
+
+        public List<string> BuscarCidadesCadastradas()
+        {
+            List<string> cidades = new List<string>();
+
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT DISTINCT cidade_aluno FROM tb_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        cidades.Add(reader.GetString("cidade_aluno"));
+                    }
+                }
+
+                conn.Close();
+            }
+
+            return cidades;
+        }
     } 
 }
