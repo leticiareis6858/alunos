@@ -34,7 +34,7 @@ namespace Alunos
             String email = txt_email.Text.Trim();
             String novaSenha = txt_nova_senha.Text.Trim();
 
-            bool usuarioValido = db.VerificarNomeEmailUsuario(nome, email);
+            bool usuarioValido = db.VerificarNomeEmailUsuario(email, nome);
 
             if (usuarioValido)
             {
