@@ -109,9 +109,6 @@
             this.status_matricula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.status_matricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.status_matricula.FormattingEnabled = true;
-            this.status_matricula.Items.AddRange(new object[] {
-            "ativa",
-            "inativa"});
             this.status_matricula.Location = new System.Drawing.Point(521, 134);
             this.status_matricula.Name = "status_matricula";
             this.status_matricula.Size = new System.Drawing.Size(120, 46);

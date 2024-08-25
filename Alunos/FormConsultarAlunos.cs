@@ -27,6 +27,9 @@ namespace Alunos
             {
                 cb_cidade.Items.Add(cidade);
             }
+
+            status_matricula.Items.Add("ativa");
+            status_matricula.Items.Add("inativa");
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
@@ -53,50 +56,47 @@ namespace Alunos
 
         private void btn_pesquisar_aluno_Click(object sender, EventArgs e)
         {
-            String matricula = txt_id.Text;
-            String nome = txt_nome_aluno.Text;
-            String email = txt_email.Text;
-            String whatsapp = txt_whatsapp.Text;
-            String cidade = cb_cidade.Text;
-            String endereco = txt_endereco.Text;
-            String dataNasc = data_nasc.Value.ToString("dd-MM-yyyy");
-            String statusMatricula = status_matricula.Text;
+            string matricula = txt_id.Text.Trim();
+            string nome = txt_nome_aluno.Text.Trim();
+            string email = txt_email.Text.Trim();
+            string whatsapp = txt_whatsapp.Text.Trim();
+            string cidade = cb_cidade.Text.Trim();
+            string endereco = txt_endereco.Text.Trim();
+            string dataNasc = data_nasc.Value.ToString("dd-MM-yyyy");
 
-            if (matricula != null)
+            string statusMatricula = status_matricula.CheckedItems.Count > 0 ? status_matricula.CheckedItems[0].ToString() : null;
+
+            if (!string.IsNullOrEmpty(matricula))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorId(matricula);
             }
-            else if(nome!=null)
+            else if (!string.IsNullOrEmpty(nome))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorNome(nome);
             }
-            else if(email!=null)
+            else if (!string.IsNullOrEmpty(email))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorEmail(email);
             }
-            else if(whatsapp!=null)
+            else if (!string.IsNullOrEmpty(whatsapp))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorWhatsapp(whatsapp);
             }
-            else if(cidade!=null)
+            else if (!string.IsNullOrEmpty(cidade))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorCidade(cidade);
             }
-            else if(endereco!=null)
+            else if (!string.IsNullOrEmpty(endereco))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorEndereco(endereco);
             }
-            else if(dataNasc!=null)
-            {
-                dataGridView_alunos.DataSource = db.BuscarAlunoPorDataNasc(dataNasc);
-            }
-            else if(statusMatricula!=null)
+            else if (!string.IsNullOrEmpty(statusMatricula))
             {
                 dataGridView_alunos.DataSource = db.BuscarAlunoPorStatusMatricula(statusMatricula);
             }
-            else if(nome!=null&&matricula!=null&&email!=null && whatsapp != null && cidade != null && endereco != null && dataNasc != null && statusMatricula != null)
+            else if (!string.IsNullOrEmpty(dataNasc) && dataNasc != DateTime.Now.ToString("dd-MM-yyyy"))
             {
-                dataGridView_alunos.DataSource = db.BuscarAluno(nome, matricula, email, whatsapp, cidade, endereco, dataNasc, statusMatricula);
+                dataGridView_alunos.DataSource = db.BuscarAlunoPorDataNasc(dataNasc);
             }
             else
             {
