@@ -35,7 +35,7 @@
             this.txt_endereco = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.status_matricula = new System.Windows.Forms.CheckedListBox();
-            this.txt_cidade = new System.Windows.Forms.ComboBox();
+            this.cb_cidade = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -117,16 +117,16 @@
             this.status_matricula.Size = new System.Drawing.Size(120, 46);
             this.status_matricula.TabIndex = 9;
             // 
-            // txt_cidade
+            // cb_cidade
             // 
-            this.txt_cidade.BackColor = System.Drawing.Color.Thistle;
-            this.txt_cidade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txt_cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cidade.FormattingEnabled = true;
-            this.txt_cidade.Location = new System.Drawing.Point(30, 234);
-            this.txt_cidade.Name = "txt_cidade";
-            this.txt_cidade.Size = new System.Drawing.Size(221, 28);
-            this.txt_cidade.TabIndex = 10;
+            this.cb_cidade.BackColor = System.Drawing.Color.Thistle;
+            this.cb_cidade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cb_cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_cidade.FormattingEnabled = true;
+            this.cb_cidade.Location = new System.Drawing.Point(30, 234);
+            this.cb_cidade.Name = "cb_cidade";
+            this.cb_cidade.Size = new System.Drawing.Size(221, 28);
+            this.cb_cidade.TabIndex = 10;
             // 
             // label1
             // 
@@ -301,7 +301,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_cidade);
+            this.Controls.Add(this.cb_cidade);
             this.Controls.Add(this.status_matricula);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.txt_endereco);
@@ -326,7 +326,7 @@
         private System.Windows.Forms.TextBox txt_endereco;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.CheckedListBox status_matricula;
-        private System.Windows.Forms.ComboBox txt_cidade;
+        private System.Windows.Forms.ComboBox cb_cidade;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
