@@ -66,7 +66,7 @@ namespace Alunos
                     endereco_aluno varchar(100) DEFAULT NULL,
                     cidade_aluno varchar(100) NOT NULL,
                     data_nasc_aluno varchar(10) DEFAULT NULL,
-                    status_matricula_aluno ENUM('ativa', 'inativa') DEFAULT 'ativo', 
+                    status_matricula_aluno ENUM('ativa', 'inativa') DEFAULT 'ativa', 
                     PRIMARY KEY (matricula_aluno)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
