@@ -811,5 +811,23 @@ namespace Alunos
                 return dt;
             }
         }
+
+        public String BuscarNomeUsuarioPorEmail(String email)
+        {
+            using(MySqlConnection conn=GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT nome_usuario FROM tb_usuario WHERE email_usuario = @email";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                object result = cmd.ExecuteScalar();
+
+                conn.Close();
+
+                return result.ToString(); ;
+
+            }
+        }
     } 
 }
