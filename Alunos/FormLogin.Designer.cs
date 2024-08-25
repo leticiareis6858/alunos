@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.link_cadastrar = new System.Windows.Forms.LinkLabel();
             this.link_mudar_senha = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,22 +35,13 @@
             this.btn_entrar = new System.Windows.Forms.Button();
             this.txt_senha = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(257, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 158);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // link_cadastrar
             // 
             this.link_cadastrar.AutoSize = true;
             this.link_cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.link_cadastrar.Location = new System.Drawing.Point(110, 234);
+            this.link_cadastrar.Location = new System.Drawing.Point(43, 234);
             this.link_cadastrar.Name = "link_cadastrar";
             this.link_cadastrar.Size = new System.Drawing.Size(151, 15);
             this.link_cadastrar.TabIndex = 14;
@@ -94,7 +84,7 @@
             // btn_entrar
             // 
             this.btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_entrar.Location = new System.Drawing.Point(134, 196);
+            this.btn_entrar.Location = new System.Drawing.Point(72, 196);
             this.btn_entrar.Name = "btn_entrar";
             this.btn_entrar.Size = new System.Drawing.Size(89, 35);
             this.btn_entrar.TabIndex = 10;
@@ -121,8 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 268);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(234, 268);
             this.Controls.Add(this.link_cadastrar);
             this.Controls.Add(this.link_mudar_senha);
             this.Controls.Add(this.label2);
@@ -132,15 +121,12 @@
             this.Controls.Add(this.txt_email);
             this.Name = "FormLogin";
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel link_cadastrar;
         private System.Windows.Forms.LinkLabel link_mudar_senha;
         private System.Windows.Forms.Label label2;
