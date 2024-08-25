@@ -359,20 +359,6 @@ namespace Alunos
             }
         }
 
-        public string BuscarMatriculaAlunoPorNome(string nome)
-        {
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT matricula_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
-
-                object result = cmd.ExecuteScalar();
-
-                return result.ToString();
-            }
-        }
 
         public string BuscarNomeAluno(string nome)
         {
@@ -629,7 +615,7 @@ namespace Alunos
             }
         }
 
-        public DataTable BuscarAluno(String id)
+        public DataTable BuscarAlunoPorId(String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
@@ -647,5 +633,183 @@ namespace Alunos
                 return dt;
             }
         }
-    }
+
+        public DataTable BuscarAlunoPorNome(String nome)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorEmail(String email)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE email_aluno LIKE @email_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@email_aluno", "%" + email + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorCidade(String cidade)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE cidade_aluno LIKE @cidade_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@cidade_aluno", "%" + cidade + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorStatusMatricula(String statusMatricula)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE status_matricula_aluno LIKE @status_matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@status_matricula_aluno", "%" + statusMatricula + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorDataNasc(String dataNasc)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE data_nasc_aluno LIKE @data_nasc_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@data_nasc_aluno", "%" + dataNasc + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorEndereco(String endereco)
+        {
+            using(MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE endereco_aluno LIKE @endereco_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@endereco_aluno", "%" + endereco + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorWhatsapp(String whatsapp)
+        {
+            using( MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE whatsapp_aluno LIKE @whatsapp_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@whatsapp_aluno", "%" + whatsapp + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAlunoPorMatricula(String matricula)
+        {
+            using(MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT * FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+
+        public DataTable BuscarAluno(String nome, String matricula, String email, String whatsapp, String endereco, String statusMatricula, String cidade, String dataNasc)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                String query= "SELECT * FROM tb_aluno WHERE nome_aluno LIKE @nome AND matricula_aluno LIKE @matricula AND email_aluno LIKE @email AND whatsapp_aluno LIKE @whatsapp AND endereco_aluno LIKE @endereco AND status_matricula_aluno LIKE @statusMatricula AND cidade_aluno LIKE @cidade AND data_nasc_aluno LIKE @dataNasc";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+                cmd.Parameters.AddWithValue("@matricula", "%" + matricula + "%");
+                cmd.Parameters.AddWithValue("@email", "%" + email + "%");
+                cmd.Parameters.AddWithValue("@whatsapp", "%" + whatsapp + "%");
+                cmd.Parameters.AddWithValue("@endereco", "%" + endereco + "%");
+                cmd.Parameters.AddWithValue("@statusMatricula", "%" + statusMatricula + "%");
+                cmd.Parameters.AddWithValue("@cidade", "%" + cidade + "%");
+                cmd.Parameters.AddWithValue("@dataNasc", "%" + dataNasc + "%");
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                conn.Close();
+
+                return dt;
+            }
+        }
+    } 
 }
