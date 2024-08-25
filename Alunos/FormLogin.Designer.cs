@@ -41,6 +41,7 @@
             // 
             this.link_cadastrar.AutoSize = true;
             this.link_cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_cadastrar.LinkColor = System.Drawing.Color.DarkSlateBlue;
             this.link_cadastrar.Location = new System.Drawing.Point(43, 234);
             this.link_cadastrar.Name = "link_cadastrar";
             this.link_cadastrar.Size = new System.Drawing.Size(151, 15);
@@ -53,6 +54,7 @@
             // 
             this.link_mudar_senha.AutoSize = true;
             this.link_mudar_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_mudar_senha.LinkColor = System.Drawing.Color.DarkSlateBlue;
             this.link_mudar_senha.Location = new System.Drawing.Point(27, 153);
             this.link_mudar_senha.Name = "link_mudar_senha";
             this.link_mudar_senha.Size = new System.Drawing.Size(181, 15);
@@ -83,17 +85,20 @@
             // 
             // btn_entrar
             // 
-            this.btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_entrar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_entrar.Location = new System.Drawing.Point(72, 196);
             this.btn_entrar.Name = "btn_entrar";
             this.btn_entrar.Size = new System.Drawing.Size(89, 35);
             this.btn_entrar.TabIndex = 10;
             this.btn_entrar.Text = "Entrar";
-            this.btn_entrar.UseVisualStyleBackColor = true;
+            this.btn_entrar.UseVisualStyleBackColor = false;
             this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
             // 
             // txt_senha
             // 
+            this.txt_senha.BackColor = System.Drawing.Color.Thistle;
             this.txt_senha.Location = new System.Drawing.Point(30, 130);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.PasswordChar = '*';
@@ -102,6 +107,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.BackColor = System.Drawing.Color.Thistle;
             this.txt_email.Location = new System.Drawing.Point(30, 60);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(176, 20);
@@ -111,6 +117,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(234, 268);
             this.Controls.Add(this.link_cadastrar);
             this.Controls.Add(this.link_mudar_senha);

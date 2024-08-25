@@ -52,17 +52,20 @@
             // 
             // btn_limpar
             // 
+            this.btn_limpar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Location = new System.Drawing.Point(291, 292);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(102, 49);
             this.btn_limpar.TabIndex = 35;
             this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.UseVisualStyleBackColor = false;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // txt_senha
             // 
+            this.txt_senha.BackColor = System.Drawing.Color.Thistle;
             this.txt_senha.Location = new System.Drawing.Point(32, 191);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(228, 20);
@@ -70,6 +73,7 @@
             // 
             // txt_cidade
             // 
+            this.txt_cidade.BackColor = System.Drawing.Color.Thistle;
             this.txt_cidade.Location = new System.Drawing.Point(291, 135);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(227, 20);
@@ -77,6 +81,7 @@
             // 
             // txt_endereco
             // 
+            this.txt_endereco.BackColor = System.Drawing.Color.Thistle;
             this.txt_endereco.Location = new System.Drawing.Point(291, 191);
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(228, 20);
@@ -84,6 +89,7 @@
             // 
             // txt_telefone
             // 
+            this.txt_telefone.BackColor = System.Drawing.Color.Thistle;
             this.txt_telefone.Location = new System.Drawing.Point(30, 244);
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.Size = new System.Drawing.Size(223, 20);
@@ -91,6 +97,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.BackColor = System.Drawing.Color.Thistle;
             this.txt_email.Location = new System.Drawing.Point(32, 135);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(227, 20);
@@ -98,6 +105,7 @@
             // 
             // txt_nome_aluno
             // 
+            this.txt_nome_aluno.BackColor = System.Drawing.Color.Thistle;
             this.txt_nome_aluno.Location = new System.Drawing.Point(32, 79);
             this.txt_nome_aluno.Name = "txt_nome_aluno";
             this.txt_nome_aluno.Size = new System.Drawing.Size(227, 20);
@@ -105,32 +113,38 @@
             // 
             // data_nascimento
             // 
+            this.data_nascimento.CalendarMonthBackground = System.Drawing.Color.Thistle;
+            this.data_nascimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.data_nascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.data_nascimento.Location = new System.Drawing.Point(291, 79);
             this.data_nascimento.Name = "data_nascimento";
-            this.data_nascimento.Size = new System.Drawing.Size(261, 21);
+            this.data_nascimento.Size = new System.Drawing.Size(257, 21);
             this.data_nascimento.TabIndex = 28;
             // 
             // btn_voltar
             // 
+            this.btn_voltar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.Location = new System.Drawing.Point(512, 18);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(78, 30);
             this.btn_voltar.TabIndex = 27;
             this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.UseVisualStyleBackColor = false;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // btn_cadastrar
             // 
+            this.btn_cadastrar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastrar.Location = new System.Drawing.Point(139, 292);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(102, 49);
             this.btn_cadastrar.TabIndex = 26;
             this.btn_cadastrar.Text = "Cadastrar";
-            this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.UseVisualStyleBackColor = false;
             this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // label8
@@ -215,6 +229,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.Thistle;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ativa",
@@ -232,11 +247,13 @@
             this.txt_nome.Size = new System.Drawing.Size(43, 13);
             this.txt_nome.TabIndex = 38;
             this.txt_nome.Text = "Usuário";
+            this.txt_nome.Visible = false;
             // 
             // FormCadastrarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(617, 376);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.comboBox1);

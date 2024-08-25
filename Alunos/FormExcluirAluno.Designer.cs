@@ -44,6 +44,7 @@
             // dataGridView_alunos
             // 
             this.dataGridView_alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_alunos.GridColor = System.Drawing.Color.Thistle;
             this.dataGridView_alunos.Location = new System.Drawing.Point(39, 169);
             this.dataGridView_alunos.Name = "dataGridView_alunos";
             this.dataGridView_alunos.Size = new System.Drawing.Size(412, 250);
@@ -51,6 +52,7 @@
             // 
             // txt_id
             // 
+            this.txt_id.BackColor = System.Drawing.Color.Thistle;
             this.txt_id.Location = new System.Drawing.Point(39, 55);
             this.txt_id.Multiline = true;
             this.txt_id.Name = "txt_id";
@@ -63,41 +65,47 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
+            this.label1.Size = new System.Drawing.Size(144, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "ID do Aluno:";
+            this.label1.Text = "Matrícula do Aluno:";
             // 
             // btn_excluir
             // 
+            this.btn_excluir.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.Location = new System.Drawing.Point(246, 52);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(88, 44);
             this.btn_excluir.TabIndex = 3;
             this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.UseVisualStyleBackColor = false;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_voltar
             // 
+            this.btn_voltar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.Location = new System.Drawing.Point(378, 24);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(73, 37);
             this.btn_voltar.TabIndex = 5;
             this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.UseVisualStyleBackColor = false;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // btn_limpar
             // 
+            this.btn_limpar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Location = new System.Drawing.Point(378, 70);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(73, 37);
             this.btn_limpar.TabIndex = 6;
             this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.UseVisualStyleBackColor = false;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // txt_nome
@@ -112,13 +120,15 @@
             // 
             // btn_buscar
             // 
+            this.btn_buscar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buscar.Location = new System.Drawing.Point(246, 102);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(88, 44);
             this.btn_buscar.TabIndex = 9;
             this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label2
@@ -133,6 +143,7 @@
             // 
             // txt_nome_aluno
             // 
+            this.txt_nome_aluno.BackColor = System.Drawing.Color.Thistle;
             this.txt_nome_aluno.Location = new System.Drawing.Point(39, 119);
             this.txt_nome_aluno.Multiline = true;
             this.txt_nome_aluno.Name = "txt_nome_aluno";
@@ -143,6 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(484, 464);
             this.Controls.Add(this.txt_nome_aluno);
             this.Controls.Add(this.label2);

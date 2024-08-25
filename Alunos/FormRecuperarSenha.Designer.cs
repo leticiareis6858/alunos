@@ -43,19 +43,21 @@
             // 
             // btn_voltar
             // 
+            this.btn_voltar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_voltar.Location = new System.Drawing.Point(300, 12);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(75, 23);
             this.btn_voltar.TabIndex = 19;
             this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.UseVisualStyleBackColor = false;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label5.Location = new System.Drawing.Point(19, 280);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 20);
@@ -75,6 +77,7 @@
             // 
             // txt_nova_senha
             // 
+            this.txt_nova_senha.BackColor = System.Drawing.Color.Thistle;
             this.txt_nova_senha.Location = new System.Drawing.Point(23, 177);
             this.txt_nova_senha.Name = "txt_nova_senha";
             this.txt_nova_senha.Size = new System.Drawing.Size(305, 20);
@@ -82,6 +85,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.BackColor = System.Drawing.Color.Thistle;
             this.txt_email.Location = new System.Drawing.Point(23, 118);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(305, 20);
@@ -109,17 +113,20 @@
             // 
             // btn_mudar
             // 
-            this.btn_mudar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mudar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_mudar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_mudar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mudar.Location = new System.Drawing.Point(23, 203);
             this.btn_mudar.Name = "btn_mudar";
             this.btn_mudar.Size = new System.Drawing.Size(138, 45);
             this.btn_mudar.TabIndex = 12;
             this.btn_mudar.Text = "Mudar senha";
-            this.btn_mudar.UseVisualStyleBackColor = true;
+            this.btn_mudar.UseVisualStyleBackColor = false;
             this.btn_mudar.Click += new System.EventHandler(this.btn_mudar_Click);
             // 
             // txt_nome
             // 
+            this.txt_nome.BackColor = System.Drawing.Color.Thistle;
             this.txt_nome.Location = new System.Drawing.Point(23, 60);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(305, 20);
@@ -137,19 +144,22 @@
             // 
             // btn_limpar
             // 
+            this.btn_limpar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Location = new System.Drawing.Point(190, 203);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(138, 45);
             this.btn_limpar.TabIndex = 20;
             this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.UseVisualStyleBackColor = false;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // FormRecuperarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(389, 363);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_voltar);

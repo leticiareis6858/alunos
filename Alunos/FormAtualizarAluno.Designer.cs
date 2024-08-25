@@ -55,6 +55,8 @@
             // 
             // txt_data_nasc
             // 
+            this.txt_data_nasc.CalendarMonthBackground = System.Drawing.Color.Thistle;
+            this.txt_data_nasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_data_nasc.Location = new System.Drawing.Point(65, 298);
             this.txt_data_nasc.Name = "txt_data_nasc";
             this.txt_data_nasc.Size = new System.Drawing.Size(220, 20);
@@ -72,6 +74,7 @@
             // 
             // txt_cidade
             // 
+            this.txt_cidade.BackColor = System.Drawing.Color.Thistle;
             this.txt_cidade.Location = new System.Drawing.Point(308, 185);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(228, 20);
@@ -89,6 +92,7 @@
             // 
             // txt_endereco
             // 
+            this.txt_endereco.BackColor = System.Drawing.Color.Thistle;
             this.txt_endereco.Location = new System.Drawing.Point(65, 239);
             this.txt_endereco.Name = "txt_endereco";
             this.txt_endereco.Size = new System.Drawing.Size(223, 20);
@@ -106,6 +110,7 @@
             // 
             // txt_nome
             // 
+            this.txt_nome.BackColor = System.Drawing.Color.Thistle;
             this.txt_nome.Location = new System.Drawing.Point(65, 127);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(223, 20);
@@ -113,28 +118,33 @@
             // 
             // btn_limpar
             // 
+            this.btn_limpar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_limpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpar.Location = new System.Drawing.Point(434, 216);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(102, 49);
             this.btn_limpar.TabIndex = 84;
             this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.UseVisualStyleBackColor = false;
             this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // btn_voltar
             // 
+            this.btn_voltar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_voltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.Location = new System.Drawing.Point(473, 12);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(78, 30);
             this.btn_voltar.TabIndex = 83;
             this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.UseVisualStyleBackColor = false;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // txt_senha
             // 
+            this.txt_senha.BackColor = System.Drawing.Color.Thistle;
             this.txt_senha.Location = new System.Drawing.Point(305, 127);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(228, 20);
@@ -142,6 +152,7 @@
             // 
             // txt_telefone
             // 
+            this.txt_telefone.BackColor = System.Drawing.Color.Thistle;
             this.txt_telefone.Location = new System.Drawing.Point(65, 185);
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.Size = new System.Drawing.Size(223, 20);
@@ -149,6 +160,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.BackColor = System.Drawing.Color.Thistle;
             this.txt_email.Location = new System.Drawing.Point(304, 78);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(227, 20);
@@ -156,13 +168,15 @@
             // 
             // btn_atualizar
             // 
+            this.btn_atualizar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_atualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_atualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atualizar.Location = new System.Drawing.Point(308, 216);
             this.btn_atualizar.Name = "btn_atualizar";
             this.btn_atualizar.Size = new System.Drawing.Size(102, 49);
             this.btn_atualizar.TabIndex = 79;
             this.btn_atualizar.Text = "Atualizar";
-            this.btn_atualizar.UseVisualStyleBackColor = true;
+            this.btn_atualizar.UseVisualStyleBackColor = false;
             this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
             // 
             // label8
@@ -207,6 +221,7 @@
             // 
             // dataGridView_alunos
             // 
+            this.dataGridView_alunos.BackgroundColor = System.Drawing.Color.Thistle;
             this.dataGridView_alunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_alunos.Location = new System.Drawing.Point(49, 337);
             this.dataGridView_alunos.Name = "dataGridView_alunos";
@@ -229,12 +244,13 @@
             this.labelid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelid.Location = new System.Drawing.Point(64, 55);
             this.labelid.Name = "labelid";
-            this.labelid.Size = new System.Drawing.Size(95, 20);
+            this.labelid.Size = new System.Drawing.Size(142, 20);
             this.labelid.TabIndex = 96;
-            this.labelid.Text = "ID do aluno:";
+            this.labelid.Text = "Matrícula do aluno:";
             // 
             // txt_id
             // 
+            this.txt_id.BackColor = System.Drawing.Color.Thistle;
             this.txt_id.Location = new System.Drawing.Point(65, 78);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(223, 20);
@@ -242,19 +258,22 @@
             // 
             // btn_buscar
             // 
+            this.btn_buscar.BackColor = System.Drawing.Color.LightCoral;
+            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buscar.Location = new System.Drawing.Point(309, 275);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(227, 43);
             this.btn_buscar.TabIndex = 98;
             this.btn_buscar.Text = "Pesquisar aluno";
-            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // FormAtualizarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(591, 558);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_id);
