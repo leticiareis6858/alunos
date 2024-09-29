@@ -63,7 +63,6 @@ namespace Alunos
                     nome_aluno varchar(100) NOT NULL UNIQUE,
                     email_aluno varchar(45) NOT NULL UNIQUE,
                     whatsapp_aluno varchar(20) DEFAULT NULL UNIQUE,
-                    senha_aluno varchar(50) NOT NULL,
                     endereco_aluno varchar(100) DEFAULT NULL,
                     cidade_aluno varchar(100) NOT NULL,
                     data_nasc_aluno varchar(10) DEFAULT NULL,
@@ -169,17 +168,16 @@ namespace Alunos
             }
         }
 
-        public void cadastrarAluno(String nome, String email, String senha, String telefone, String data_nasc, String cidade, String endereco)
+        public void cadastrarAluno(String nome, String email, String telefone, String data_nasc, String cidade, String endereco)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
 
-                String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, whatsapp_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
+                String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, whatsapp_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @telefone, @data_nascimento, @cidade, @endereco)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@senha", senha);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@data_nascimento", data_nasc);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
@@ -214,22 +212,6 @@ namespace Alunos
                 string query = "UPDATE tb_aluno SET email_aluno = @email WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@id", id);
-
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-            }
-        }
-
-        public void AtualizarSenhaAluno(String senha, String id)
-        {
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                string query = "UPDATE tb_aluno SET senha_aluno = @senha WHERE matricula_aluno = @id ";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@senha", senha);
                 cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
@@ -302,16 +284,15 @@ namespace Alunos
             }
         }
 
-        public void AtualizarAluno(String nome, String email, String senha, String telefone, String cidade, String endereco, String dataNasc, String id)
+        public void AtualizarAluno(String nome, String email, String telefone, String cidade, String endereco, String dataNasc, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, senha_aluno = @senha, whatsapp_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
+                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, whatsapp_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@senha", senha);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
                 cmd.Parameters.AddWithValue("@endereco", endereco);
@@ -382,21 +363,6 @@ namespace Alunos
             {
                 conn.Open();
                 string query = "SELECT email_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
-
-                object result = cmd.ExecuteScalar();
-
-                return result.ToString();
-            }
-        }
-
-        public string BuscarSenhaAlunoPorNome(string nome)
-        {
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT senha_aluno FROM tb_aluno WHERE nome_aluno LIKE @nome_aluno";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome_aluno", "%" + nome + "%");
 
@@ -502,21 +468,6 @@ namespace Alunos
             {
                 conn.Open();
                 string query = "SELECT email_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
-
-                object result = cmd.ExecuteScalar();
-
-                return result.ToString();
-            }
-        }
-
-        public string BuscarSenhaAlunoPorMatricula(string matricula)
-        {
-            using (MySqlConnection conn = GetConnection())
-            {
-                conn.Open();
-                string query = "SELECT senha_aluno FROM tb_aluno WHERE matricula_aluno = @matricula_aluno";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@matricula_aluno", matricula);
 

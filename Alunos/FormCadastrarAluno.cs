@@ -33,7 +33,6 @@ namespace Alunos
             txt_nome_aluno.Clear();
             txt_email.Clear();
             txt_telefone.Clear();
-            txt_senha.Clear();
             txt_cidade.Clear();
             txt_endereco.Clear();
             data_nascimento.Value = DateTime.Now;
@@ -43,15 +42,14 @@ namespace Alunos
         {
             String nome = txt_nome_aluno.Text.Trim();
             String email = txt_email.Text.Trim();
-            String senha = txt_senha.Text.Trim();
             String telefone = txt_telefone.Text.Trim();
             String data_nasc = data_nascimento.Value.ToString("dd-MM-yyyy").Trim();
             String cidade = txt_cidade.Text.Trim();
             String endereco = txt_endereco.Text.Trim();
 
-            if (!nome.Equals("") && !email.Equals("") && !senha.Equals("") && !telefone.Equals("") && !data_nasc.Equals("") && !cidade.Equals("") && !endereco.Equals(""))
+            if (!nome.Equals("") && !email.Equals("") && !telefone.Equals("") && !data_nasc.Equals("") && !cidade.Equals("") && !endereco.Equals(""))
             {
-                db.cadastrarAluno(nome, email, senha, telefone, data_nasc, cidade, endereco);
+                db.cadastrarAluno(nome, email, telefone, data_nasc, cidade, endereco);
                 MessageBox.Show("Aluno cadastrado com sucesso!");
             }
             else
