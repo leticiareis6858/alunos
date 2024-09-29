@@ -22,11 +22,11 @@ namespace Alunos
 
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            if (txt_email.Text == null)
+            if (string.IsNullOrEmpty(txt_email.Text))
             {
                 MessageBox.Show("Informe um email");
             }
-            else if (txt_senha.Text == null)
+            else if (string.IsNullOrEmpty(txt_senha.Text))
             {
                 MessageBox.Show("Informe uma senha");
             }

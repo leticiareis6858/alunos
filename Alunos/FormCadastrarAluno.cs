@@ -47,7 +47,7 @@ namespace Alunos
             String cidade = txt_cidade.Text.Trim();
             String endereco = txt_endereco.Text.Trim();
 
-            if (!nome.Equals("") && !email.Equals("") && !telefone.Equals("") && !data_nasc.Equals("") && !cidade.Equals("") && !endereco.Equals(""))
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(telefone) && !string.IsNullOrEmpty(data_nasc) && !string.IsNullOrEmpty(cidade) && !string.IsNullOrEmpty(endereco))
             {
                 db.cadastrarAluno(nome, email, telefone, data_nasc, cidade, endereco);
                 MessageBox.Show("Aluno cadastrado com sucesso!");

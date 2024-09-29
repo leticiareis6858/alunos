@@ -25,7 +25,7 @@ namespace Alunos
             String email = txt_email.Text.Trim();
             String senha = txt_senha.Text.Trim();
 
-            if (!nome.Equals("") && !email.Equals("") && !senha.Equals(""))
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(email)&& !string.IsNullOrEmpty(senha))
             {
                 bool usuarioCadastrado=db.CadastrarUsuario(nome, email, senha);
                 if (usuarioCadastrado)

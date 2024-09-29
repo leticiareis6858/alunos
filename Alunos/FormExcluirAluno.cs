@@ -26,7 +26,7 @@ namespace Alunos
         {
             String idAluno = txt_id.Text;
 
-            if(idAluno!=null)
+            if(!string.IsNullOrEmpty(idAluno))
             {
                 bool alunoExcluido = db.ExcluirAluno(idAluno);
                 
@@ -63,12 +63,12 @@ namespace Alunos
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             String id = txt_id.Text;
-            if (id != null)
+            if (!string.IsNullOrEmpty(id))
             {
                 DataTable aluno = db.BuscarAlunoPorId(id);
                 dataGridView_alunos.DataSource = aluno;
             }
-            else if(txt_nome_aluno.Text!=null)
+            else if(!string.IsNullOrEmpty(txt_nome_aluno.Text))
             {
                id = txt_nome_aluno.Text;
                DataTable aluno = db.BuscarAlunoPorId(id);
@@ -77,7 +77,7 @@ namespace Alunos
             }
             else
             {
-                MessageBox.Show("Informe o ID do aluno a ser buscado");
+                MessageBox.Show("Informe o ID do aluno a ser buscado!");
             }
         }
     }
