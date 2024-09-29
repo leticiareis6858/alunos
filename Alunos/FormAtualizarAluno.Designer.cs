@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarAluno));
             this.txt_data_nasc = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_cidade = new System.Windows.Forms.TextBox();
@@ -301,6 +302,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAtualizarAluno";
             this.Text = "Atualizar Aluno";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_alunos)).EndInit();

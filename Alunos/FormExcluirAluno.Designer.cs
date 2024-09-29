@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExcluirAluno));
             this.dataGridView_alunos = new System.Windows.Forms.DataGridView();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -166,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.dataGridView_alunos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormExcluirAluno";
             this.Text = "Excluir Aluno";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_alunos)).EndInit();

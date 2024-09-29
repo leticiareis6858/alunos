@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelaInicial));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
@@ -148,6 +149,7 @@
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTelaInicial";
             this.Text = "Tela Inicial";
             this.groupBox1.ResumeLayout(false);

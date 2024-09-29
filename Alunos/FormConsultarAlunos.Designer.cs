@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultarAlunos));
             this.dataGridView_alunos = new System.Windows.Forms.DataGridView();
             this.txt_nome_aluno = new System.Windows.Forms.TextBox();
             this.txt_whatsapp = new System.Windows.Forms.TextBox();
@@ -306,6 +307,7 @@
             this.Controls.Add(this.txt_whatsapp);
             this.Controls.Add(this.txt_nome_aluno);
             this.Controls.Add(this.dataGridView_alunos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConsultarAlunos";
             this.Text = "Consultar Alunos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_alunos)).EndInit();

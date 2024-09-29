@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarAluno));
             this.btn_limpar = new System.Windows.Forms.Button();
             this.txt_cidade = new System.Windows.Forms.TextBox();
             this.txt_endereco = new System.Windows.Forms.TextBox();
@@ -227,6 +228,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastrarAluno";
             this.Text = "Cadastrar Aluno";
             this.ResumeLayout(false);
