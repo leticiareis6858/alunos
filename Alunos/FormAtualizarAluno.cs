@@ -36,51 +36,43 @@ namespace Alunos
             txt_nome.Clear();
             txt_email.Clear();
             txt_telefone.Clear();
-            txt_senha.Clear();
             txt_cidade.Clear();
             txt_endereco.Clear();
             txt_data_nasc.Value = DateTime.Now;
+            cb_status_matricula.SelectedItem = null;
         }
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-
-            if (txt_id.Text == null || txt_nome.Text == null || txt_email.Text == null || txt_telefone.Text == null || txt_senha.Text == null || txt_cidade.Text == null || txt_endereco.Text == null || txt_data_nasc.Value == DateTime.Now)
+            if (string.IsNullOrEmpty(txt_id.Text) || string.IsNullOrEmpty(txt_nome.Text) || string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_cidade.Text) || string.IsNullOrEmpty(txt_endereco.Text) || txt_data_nasc.Value == DateTime.Now || cb_status_matricula.SelectedItem == null)
             {
                 MessageBox.Show("Preencha ao menos um dos campos!");
             }
-
-            else if (txt_id.Text!=null)
+            else if (!string.IsNullOrEmpty(txt_id.Text))
             {
                 String id = txt_id.Text;
 
-
-                if (txt_nome.Text != null)
+                if (!string.IsNullOrEmpty(txt_nome.Text))
                 {
                     db.AtualizarNomeAluno(txt_nome.Text, id);
                     MessageBox.Show("Nome atualizado com sucesso!");
                 }
-                else if (txt_email.Text != null)
+                else if (!string.IsNullOrEmpty(txt_email.Text))
                 {
                     db.AtualizarEmailAluno(txt_email.Text, id);
                     MessageBox.Show("Email atualizado com sucesso!");
                 }
-                else if (txt_telefone.Text != null)
+                else if (!string.IsNullOrEmpty(txt_telefone.Text))
                 {
                     db.AtualizarTelefoneAluno(txt_telefone.Text, id);
                     MessageBox.Show("Telefone atualizado com sucesso!");
                 }
-                else if (txt_senha.Text != null)
-                {
-                    db.AtualizarSenhaAluno(txt_senha.Text, id);
-                    MessageBox.Show("Senha atualizada com sucesso!");
-                }
-                else if (txt_cidade.Text != null)
+                else if (!string.IsNullOrEmpty(txt_cidade.Text))
                 {
                     db.AtualizarCidadeAluno(txt_cidade.Text, id);
                     MessageBox.Show("Cidade atualizada com sucesso!");
                 }
-                else if (txt_endereco.Text != null)
+                else if (!string.IsNullOrEmpty(txt_endereco.Text))
                 {
                     db.AtualizarEnderecoAluno(txt_endereco.Text, id);
                     MessageBox.Show("Endereço atualizado com sucesso!");
@@ -91,39 +83,41 @@ namespace Alunos
                     db.AtualizarDataNascAluno(data_nasc, id);
                     MessageBox.Show("Data de nascimento atualizada com sucesso!");
                 }
-                if (txt_email != null && txt_telefone != null && txt_senha != null && txt_cidade != null && txt_endereco != null && txt_data_nasc.Value != DateTime.Now)
+                else if(cb_status_matricula.SelectedItem != null)
+                {
+                    String status_matricula = cb_status_matricula.SelectedItem.ToString();
+                    db.AtualizarStatusMatriculaAluno(status_matricula, id);
+                    MessageBox.Show("Status da matrícula atualizado com sucesso!");
+
+                }
+                if (!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_telefone.Text) && !string.IsNullOrEmpty(txt_cidade.Text) && !string.IsNullOrEmpty(txt_endereco.Text) && txt_data_nasc.Value != DateTime.Now && cb_status_matricula.SelectedItem != null)
                 {
                     String data_nasc = txt_data_nasc.Value.ToString("dd-MM-yyyy").Trim();
-                    db.AtualizarAluno(txt_nome.Text, txt_email.Text, txt_telefone.Text, txt_senha.Text, txt_cidade.Text, txt_endereco.Text, data_nasc, id);
+                    String status_matricula = cb_status_matricula.SelectedItem.ToString();
+                    db.AtualizarAluno(txt_nome.Text, txt_email.Text, txt_telefone.Text, txt_cidade.Text, txt_endereco.Text, data_nasc, status_matricula, id);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
-            } 
-            
-            else if(txt_nome.Text!=null)
+            }
+            else if (!string.IsNullOrEmpty(txt_nome.Text))
             {
                 String id = db.BuscarIdAlunoPorNome(txt_nome.Text);
 
-               if (txt_email.Text != null)
+                if (!string.IsNullOrEmpty(txt_email.Text))
                 {
                     db.AtualizarEmailAluno(txt_email.Text, id);
                     MessageBox.Show("Email atualizado com sucesso!");
                 }
-                else if (txt_telefone.Text != null)
+                else if (!string.IsNullOrEmpty(txt_telefone.Text))
                 {
                     db.AtualizarTelefoneAluno(txt_telefone.Text, id);
                     MessageBox.Show("Telefone atualizado com sucesso!");
                 }
-                else if (txt_senha.Text != null)
-                {
-                    db.AtualizarSenhaAluno(txt_senha.Text, id);
-                    MessageBox.Show("Senha atualizada com sucesso!");
-                }
-                else if (txt_cidade.Text != null)
+                else if (!string.IsNullOrEmpty(txt_cidade.Text))
                 {
                     db.AtualizarCidadeAluno(txt_cidade.Text, id);
                     MessageBox.Show("Cidade atualizada com sucesso!");
                 }
-                else if (txt_endereco.Text != null)
+                else if (!string.IsNullOrEmpty(txt_endereco.Text))
                 {
                     db.AtualizarEnderecoAluno(txt_endereco.Text, id);
                     MessageBox.Show("Endereço atualizado com sucesso!");
@@ -134,13 +128,20 @@ namespace Alunos
                     db.AtualizarDataNascAluno(data_nasc, id);
                     MessageBox.Show("Data de nascimento atualizada com sucesso!");
                 }
-                if (txt_email != null && txt_telefone != null && txt_senha != null && txt_cidade != null && txt_endereco != null && txt_data_nasc.Value != DateTime.Now)
+                else if (cb_status_matricula.SelectedItem != null)
+                {
+                    String status_matricula = cb_status_matricula.SelectedItem.ToString();
+                    db.AtualizarStatusMatriculaAluno(status_matricula, id);
+                    MessageBox.Show("Status da matrícula atualizado com sucesso!");
+
+                }
+                if (!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_telefone.Text) && !string.IsNullOrEmpty(txt_cidade.Text) && !string.IsNullOrEmpty(txt_endereco.Text) && txt_data_nasc.Value != DateTime.Now && cb_status_matricula.SelectedItem != null)
                 {
                     String data_nasc = txt_data_nasc.Value.ToString("dd-MM-yyyy").Trim();
-                    db.AtualizarAluno(txt_nome.Text, txt_email.Text, txt_telefone.Text, txt_senha.Text, txt_cidade.Text, txt_endereco.Text, data_nasc, id);
+                    String status_matricula = cb_status_matricula.SelectedItem.ToString();
+                    db.AtualizarAluno(txt_nome.Text, txt_email.Text, txt_telefone.Text, txt_cidade.Text, txt_endereco.Text, data_nasc,status_matricula, id);
                     MessageBox.Show("Cadastro atualizado com sucesso!");
                 }
-
             }
             else
             {
@@ -157,7 +158,6 @@ namespace Alunos
             {
                 txt_nome.Text = db.BuscarNomeAlunoPorMatricula(id);
                 txt_email.Text = db.BuscarEmailAlunoPorMatricula(id);
-                txt_senha.Text = db.BuscarSenhaAlunoPorMatricula(id);
                 txt_telefone.Text = db.BuscarWhatsappAlunoPorMatricula(id);
                 txt_endereco.Text = db.BuscarEnderecoAlunoPorMatricula(id);
                 txt_data_nasc.Value = DateTime.Parse(db.BuscarDataNascAlunoPorMatricula(id));
@@ -167,7 +167,6 @@ namespace Alunos
             {
                 txt_nome.Text = db.BuscarNomeAluno(nome);
                 txt_email.Text = db.BuscarEmailAlunoPorNome(nome);
-                txt_senha.Text = db.BuscarSenhaAlunoPorNome(nome);
                 txt_telefone.Text = db.BuscarWhatsappAlunoPorNome(nome);
                 txt_endereco.Text = db.BuscarEnderecoAlunoPorNome(nome);
                 txt_data_nasc.Value = DateTime.Parse(db.BuscarDataNascAlunoPorNome(nome));

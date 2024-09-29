@@ -37,11 +37,9 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
-            this.txt_senha = new System.Windows.Forms.TextBox();
             this.txt_telefone = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.btn_atualizar = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,6 +48,8 @@
             this.labelid = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_status_matricula = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_alunos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             // txt_cidade
             // 
             this.txt_cidade.BackColor = System.Drawing.Color.Thistle;
-            this.txt_cidade.Location = new System.Drawing.Point(308, 185);
+            this.txt_cidade.Location = new System.Drawing.Point(304, 127);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(228, 20);
             this.txt_cidade.TabIndex = 91;
@@ -84,7 +84,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(301, 162);
+            this.label7.Location = new System.Drawing.Point(305, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 90;
@@ -142,14 +142,6 @@
             this.btn_voltar.UseVisualStyleBackColor = false;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // txt_senha
-            // 
-            this.txt_senha.BackColor = System.Drawing.Color.Thistle;
-            this.txt_senha.Location = new System.Drawing.Point(305, 127);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Size = new System.Drawing.Size(228, 20);
-            this.txt_senha.TabIndex = 82;
-            // 
             // txt_telefone
             // 
             this.txt_telefone.BackColor = System.Drawing.Color.Thistle;
@@ -178,16 +170,6 @@
             this.btn_atualizar.Text = "Atualizar";
             this.btn_atualizar.UseVisualStyleBackColor = false;
             this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(301, 104);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 20);
-            this.label8.TabIndex = 78;
-            this.label8.Text = "Senha:";
             // 
             // label6
             // 
@@ -269,12 +251,36 @@
             this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(304, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "Status da matrícula:";
+            // 
+            // cb_status_matricula
+            // 
+            this.cb_status_matricula.BackColor = System.Drawing.Color.Thistle;
+            this.cb_status_matricula.FormattingEnabled = true;
+            this.cb_status_matricula.Items.AddRange(new object[] {
+            "Ativa",
+            "Inativa"});
+            this.cb_status_matricula.Location = new System.Drawing.Point(303, 185);
+            this.cb_status_matricula.Name = "cb_status_matricula";
+            this.cb_status_matricula.Size = new System.Drawing.Size(228, 21);
+            this.cb_status_matricula.TabIndex = 100;
+            // 
             // FormAtualizarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(591, 558);
+            this.Controls.Add(this.cb_status_matricula);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.labelid);
@@ -289,11 +295,9 @@
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.txt_telefone);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.btn_atualizar);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -316,11 +320,9 @@
         public System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.TextBox txt_telefone;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Button btn_atualizar;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -329,5 +331,7 @@
         private System.Windows.Forms.Label labelid;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_status_matricula;
     }
 }

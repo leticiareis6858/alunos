@@ -66,7 +66,7 @@ namespace Alunos
                     endereco_aluno varchar(100) DEFAULT NULL,
                     cidade_aluno varchar(100) NOT NULL,
                     data_nasc_aluno varchar(10) DEFAULT NULL,
-                    status_matricula_aluno ENUM('ativa', 'inativa') DEFAULT 'ativa', 
+                    status_matricula_aluno ENUM('Ativa', 'Inativa') DEFAULT 'Ativa', 
                     PRIMARY KEY (matricula_aluno)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -284,12 +284,28 @@ namespace Alunos
             }
         }
 
-        public void AtualizarAluno(String nome, String email, String telefone, String cidade, String endereco, String dataNasc, String id)
+        public void AtualizarStatusMatriculaAluno(String statusMatricula, String id)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, whatsapp_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc WHERE matricula_aluno = @id";
+                string query = "UPDATE tb_aluno SET status_matricula_aluno = @status_matricula WHERE matricula_aluno = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@status_matricula", statusMatricula);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+        }
+
+        public void AtualizarAluno(String nome, String email, String telefone, String cidade, String endereco, String dataNasc,String statusMatricula, String id)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = "UPDATE tb_aluno SET nome_aluno = @nome, email_aluno = @email, whatsapp_aluno = @telefone, cidade_aluno = @cidade, endereco_aluno = @endereco, data_nasc_aluno = @data_nasc, status_matricula_aluno = @status_matricula WHERE matricula_aluno = @id";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
@@ -297,6 +313,7 @@ namespace Alunos
                 cmd.Parameters.AddWithValue("@cidade", cidade);
                 cmd.Parameters.AddWithValue("@endereco", endereco);
                 cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
+                cmd.Parameters.AddWithValue("@status_matricula", statusMatricula);
                 cmd.Parameters.AddWithValue("@id", id);
 
                 cmd.ExecuteNonQuery();
