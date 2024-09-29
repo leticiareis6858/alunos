@@ -26,4 +26,5 @@ Através dessa aplicação é possível:
 # 👩‍💻| Como usar:
 1. Execute a aplicação através do `FormTelaLogin`
 2. Cadastre um usuário para utilizar a aplicação
-
+# ⚖| Licença:
+Este projeto está licenciado sob a [MIT License](LICENSE).
