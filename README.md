@@ -9,7 +9,7 @@ Este projeto foi feito para o trabalho prático da disciplina de *Programação 
 
 # 📝| Funcionalidades:
 Através dessa aplicação é possível:
-- Cadastrar um usuário para poder acessar a aplicação os alunos
+- Cadastrar um usuário para poder acessar a aplicação
 - Recuperar a senha desse usuário
 - Fazer login utilizando o usuário criado
 - Cadastrar alunos
@@ -19,7 +19,7 @@ Através dessa aplicação é possível:
 
 # 💻| Instalação:
 1. Clone o repositório ou faça download do arquivo `.zip` do mesmo
-2. Instale e configure o banco de dados [MySQL](https://www.mysql.com)
+2. Instale e configure um banco de dados [MySQL](https://www.mysql.com)
 3. Crie um *Schema* no MySQL com o nome `alunos` (se for usar outro *Schema* informe o nome do mesmo no arquivo `App.config`)
 4. Configure no `App.config` o *Uid* e a *Pwd* de acordo com seu *usuário* e *senha* do MySQL
 
