@@ -53,9 +53,9 @@ namespace Alunos
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            FormTelaInicial telaInicial = new FormTelaInicial();
+            FormLogin formLogin = new FormLogin();
             this.Hide();
-            telaInicial.ShowDialog();
+            formLogin.ShowDialog();
             this.Close();
         }
     }
