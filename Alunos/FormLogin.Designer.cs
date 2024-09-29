@@ -143,6 +143,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_entrar;
         private System.Windows.Forms.TextBox txt_senha;
-        private System.Windows.Forms.TextBox txt_email;
+        public System.Windows.Forms.TextBox txt_email;
     }
 }
