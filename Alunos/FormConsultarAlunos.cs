@@ -28,8 +28,8 @@ namespace Alunos
                 cb_cidade.Items.Add(cidade);
             }
 
-            status_matricula.Items.Add("ativa");
-            status_matricula.Items.Add("inativa");
+            status_matricula.Items.Add("Ativa");
+            status_matricula.Items.Add("Inativa");
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
