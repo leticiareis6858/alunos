@@ -54,6 +54,7 @@ namespace Alunos
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
+            formLogin.txt_email.Text = txt_email.Text;
             this.Hide();
             formLogin.ShowDialog();
             this.Close();
